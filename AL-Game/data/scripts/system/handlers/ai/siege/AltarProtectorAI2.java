@@ -14,23 +14,13 @@
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aionemu.gameserver.network.aion.serverpackets;
+package ai.siege;
 
-import com.aionemu.gameserver.network.aion.AionConnection;
-import com.aionemu.gameserver.network.aion.AionServerPacket;
+import com.aionemu.gameserver.ai2.AIName;
 
 /**
- * @author Falke_34
+ * @author ATracer
  */
-public class SM_UNK_11C extends AionServerPacket {
-
-	// TODO - after/before SM_EMOTION
-
-	private int senderObjectId;
-
-	@Override
-	protected void writeImpl(AionConnection con) {
-		writeD(senderObjectId);
-		writeD(3);
-	}
+@AIName("altar_protector")
+public class AltarProtectorAI2 extends SiegeNpcAI2 {
 }

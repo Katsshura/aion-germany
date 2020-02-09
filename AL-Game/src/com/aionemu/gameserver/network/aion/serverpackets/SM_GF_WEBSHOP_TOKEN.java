@@ -20,16 +20,13 @@ import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 /**
- * @author CoolyT
+ * @author Falke_34
  */
-public class SM_UNK_98 extends AionServerPacket {
+public class SM_GF_WEBSHOP_TOKEN extends AionServerPacket {
 
 	@Override
 	protected void writeImpl(AionConnection con) {
 		writeC(2);
-		writeD(828468833);
-		writeD(1768841522);
-		writeD(24948);
-		writeD(0);
+		writeB(new byte[16]);
 	}
 }

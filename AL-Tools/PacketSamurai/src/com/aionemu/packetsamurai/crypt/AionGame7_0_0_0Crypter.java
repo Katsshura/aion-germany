@@ -14,28 +14,22 @@
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aionemu.gameserver.network.aion.clientpackets;
-
-import com.aionemu.gameserver.network.aion.AionClientPacket;
-import com.aionemu.gameserver.network.aion.AionConnection.State;
-import com.aionemu.gameserver.network.aion.serverpackets.SM_UNK_98;
+package com.aionemu.packetsamurai.crypt;
 
 /**
- * @author Falke_34
+ * @author FrozenKiller
  */
-public class CM_UNK_122 extends AionClientPacket {
+public class AionGame7_0_0_0Crypter extends AionGameCrypter {
 
-	public CM_UNK_122(int opcode, State state, State... restStates) {
-		super(opcode, state, restStates);
-	}
+    int decodeOpcodec(int op) {
+        return (op ^ 0xD9) - 216;
+    }
 
-	@Override
-	protected void readImpl() {
-		// empty
-	}
+    byte getStaticServerPacketCode() {
+        return 0x56;
+    }
 
-	@Override
-	protected void runImpl() {
-		sendPacket(new SM_UNK_98());
-	}
+    byte getStaticClientPacketCode() {
+        return 0x75;
+    }
 }
